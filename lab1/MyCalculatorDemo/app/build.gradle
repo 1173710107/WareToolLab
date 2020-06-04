@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "cc_community.com.mycalculatordemo"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+//本地单元测试依赖
+    testImplementation 'junit:junit:4.12'
+    //Mockito framework 用来模拟Android框架依赖
+    testImplementation  'org.mockito:mockito-core:1.10.19'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:+'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    //testImplementation 'junit:junit:4.12'
+//本地单元测试依赖
+    testImplementation 'junit:junit:4.12'
+//Mockito framework 用来模拟Android框架依赖
+    testImplementation  'org.mockito:mockito-core:1.10.19'
+    implementation 'junit:junit:4.12'
+}
